@@ -1,4 +1,6 @@
 node_modules
+**/database.sqlite
+
 # Logs
 logs
 *.log
