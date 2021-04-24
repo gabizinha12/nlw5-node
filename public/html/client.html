@@ -9,7 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
     />
-    <title></title>
+    <title>Cliente</title>
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body>
@@ -24,7 +24,7 @@
       <div class="text_support">
         <script id="message-user-template" type="text/template">
           <div class="client">
-            <span class="name">{{email}}</span>
+          <span class="name">{{email}}</span>
             <span class="client message">
               {{message}}
               <!-- <label class="date">{{date}}</label> -->
@@ -100,14 +100,14 @@
     const chat = document.getElementById("chat_help");
 
     function onLoad() {
-      fetch("http://localhost:3333/settings/admin").then((result) =>
-        result.json().then((response) => {
-          const buttonSupport = document.getElementById("btn_support");
-          if (!response.chat) {
-            buttonSupport.style.display = "none";
-          }
-        })
-      );
+      // fetch("http://localhost:3333/settings/admin").then((result) =>
+      //   result.json().then((response) => {
+      //     const buttonSupport = document.getElementById("btn_support");
+      //     if (!response.chat) {
+      //       buttonSupport.style.display = "none";
+      //     }
+      //   })
+      // );
     }
 
     function openChat() {

@@ -3,6 +3,7 @@ root,
 html {
   padding: 5px;
   box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
 }
 
 body {
@@ -51,6 +52,7 @@ body {
   display: flex;
   justify-content: space-between;
 }
+
 
 .in_support_header span {
   color: #fff;
@@ -173,8 +175,12 @@ body {
   padding-top: 8px;
 }
 
+.text_help  span {
+  margin-left: 20px;
+}
+
 .text_help textarea {
-  width: 290px;
+  width: 230px;
   height: 115px;
 
   padding: 10px;
@@ -183,22 +189,26 @@ body {
   border: 1px solid #dddddd;
   box-sizing: border-box;
   border-radius: 4px;
-
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 30px;
   resize: none;
 }
 
 .first_email {
   display: flex;
   flex-direction: column;
-  margin-top: 34px;
+  margin-top: 22px;
+  margin-right: 30px;
+  margin-left: 30px;
 }
 
 .first_email input {
   border: 1px solid #dddddd;
   box-sizing: border-box;
   border-radius: 4px;
-  height: 42px;
-  width: 290px;
+  height: 32px;
+  width: 230px;
 }
 
 input[type="text"]:focus {
@@ -222,8 +232,11 @@ input[type="text"]:focus {
 
 .btn_cancel {
   border: 0;
+  height: 40px;
+  border-radius: 4px;
   cursor: pointer;
   margin-right: 10px;
+  width: 121px;
 }
 
 .button {
@@ -241,6 +254,11 @@ input[type="text"]:focus {
 .charac_remaining {
   font-size: 10px;
   float: right;
+  margin-right: 30px;
+}
+
+.first_email span {
+  margin-right: 10px;
 }
 
 .date {
