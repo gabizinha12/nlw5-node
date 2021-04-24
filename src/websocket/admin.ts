@@ -16,5 +16,8 @@ io.on("connect", async (socket) => {
 
     callback(allMessages);
   });
+  socket.on("admin_send_message", params => {
+    
+  })
 
 })
