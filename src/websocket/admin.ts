@@ -1,3 +1,4 @@
+import { Connection } from "../entities/Connection";
 import { io } from "../http";
 import { ConnectionsService } from "../services/ConnectionsService";
 import { MessagesService } from "../services/MessagesService";
@@ -23,13 +24,11 @@ io.on("connect", async (socket) => {
       user_id,
       admin_id: socket.id
     })
-    const response = await connectionsService.findByUserId(user_id);
-    console.log(response)
+   const { socket_id } = await connectionsService.findByUserId(user_id);
 
-		// socket.to().emit("admin_send_to_client", {
-		// 	text,
-		// 	socket_id: socket.id,
-		// });
+    io.to(socket_id).emit('admin_send_to_client', {
+      text,
+      socket_id: socket.id,
+    });
   })
-
 })

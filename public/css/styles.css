@@ -144,6 +144,7 @@ body {
   border-radius: 4px;
   padding: 10px;
   margin-left: 12px;
+  color: black;
 }
 
 .message_send {
@@ -264,6 +265,7 @@ input[type="text"]:focus {
 .date {
   text-align: right;
   font-size: 1px;
+  color: black;
 }
 
 .btn_atd {
@@ -343,7 +345,7 @@ input[type="text"]:focus {
 
 .admin_date {
   font-size: 10px;
-  color: #fff;
+  color: black;
 }
 
 .in_support {

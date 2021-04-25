@@ -31,7 +31,6 @@ class ConnectionsService {
             user_id
         })
         return connection;
-
     } 
     async findAllWithoutAdmin() {
         const connections = await this.connectionsRepository.find({
@@ -39,6 +38,10 @@ class ConnectionsService {
             relations: ["user"]
         })
         return connections;
+    }
+    async findBySocketID(socket_id: string) {
+        const connection = await this.connectionsRepository.findOne({socket_id})
+        return connection;
     }
 }
 

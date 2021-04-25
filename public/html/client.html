@@ -100,14 +100,14 @@
     const chat = document.getElementById("chat_help");
 
     function onLoad() {
-      // fetch("http://localhost:3333/settings/admin").then((result) =>
-      //   result.json().then((response) => {
-      //     const buttonSupport = document.getElementById("btn_support");
-      //     if (!response.chat) {
-      //       buttonSupport.style.display = "none";
-      //     }
-      //   })
-      // );
+      fetch("http://localhost:3333/settings/admin").then((result) =>
+        result.json().then((response) => {
+          const buttonSupport = document.getElementById("btn_support");
+          if (!response.chat) {
+            buttonSupport.style.display = "none";
+          }
+        })
+      );
     }
 
     function openChat() {
