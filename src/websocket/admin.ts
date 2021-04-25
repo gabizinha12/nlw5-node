@@ -16,8 +16,20 @@ io.on("connect", async (socket) => {
 
     callback(allMessages);
   });
-  socket.on("admin_send_message", params => {
-    
+  socket.on("admin_send_message", async params => {
+    const { user_id, text } = params;
+    await messagesService.create({
+      text,
+      user_id,
+      admin_id: socket.id
+    })
+    const response = await connectionsService.findByUserId(user_id);
+    console.log(response)
+
+		// socket.to().emit("admin_send_to_client", {
+		// 	text,
+		// 	socket_id: socket.id,
+		// });
   })
 
 })

@@ -16,6 +16,7 @@ socket.on("admin_list_all_users", connections => {
 
 function call(id) {
     const connection = connectionsUsers.find(connection => connection.socket_id === id)
+    console.log(connection)
     const template = document.getElementById("admin_template").innerHTML
     const rendered = Mustache.render(template, {
         email: connection.user.email,
@@ -31,7 +32,7 @@ function call(id) {
         console.log(messages)
         const divMessages = document.getElementById(`allMessages${connection.user_id}`)
         messages.forEach(message => {
-            const createDiv = document.getElementById("div")
+            const createDiv = document.createElement("div")
             if (message.admin_id === null) {
                 createDiv.className = "admin_message_client"
                 createDiv.innerHTML += `<span>${connection.user.email}</span>`
@@ -48,4 +49,14 @@ function call(id) {
 
         })
     })
+}
+
+function sendMessage(id) {
+    const text = document.getElementById(`send_message_${id}`)
+    const params = {
+        text: text.value,
+        user_id: id
+    }
+
+    socket.emit("admin_send_message", params)
 }
